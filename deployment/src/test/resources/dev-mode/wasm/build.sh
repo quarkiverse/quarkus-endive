@@ -17,6 +17,6 @@ fi
 (
     cd ${SCRIPT_DIR}
     docker build --build-arg SOURCE_FILE=${SOURCE_FILE} . -t build_rs_math
-    docker run --rm build_rs_math > math.wasm
+    docker run --rm build_rs_math > math.wasm.tmp && mv math.wasm.tmp math.wasm
     echo "Built math.wasm from ${SOURCE_FILE}"
 )
