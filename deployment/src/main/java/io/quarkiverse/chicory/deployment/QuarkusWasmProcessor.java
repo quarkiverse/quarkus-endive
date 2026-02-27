@@ -149,6 +149,10 @@ class QuarkusWasmProcessor {
                 LOG.info("Generating bytecode and resources into " + classesDir.toFile().getAbsolutePath() + " for "
                         + key + " from "
                         + wasmFile);
+
+                // Wait for file to be stable before parsing to avoid race conditions during hot reload
+                waitForFileStability(wasmFile, key);
+
                 final Config generatorConfig = Config.builder()
                         .withWasmFile(wasmFile)
                         .withName(name)
@@ -332,5 +336,59 @@ class QuarkusWasmProcessor {
             }
         }
         return result;
+    }
+
+    /**
+     * Waits for a WASM file to become stable before processing.
+     * This prevents race conditions when the file is being written by an external process
+     * (e.g., Docker build script) and the file watcher triggers a rebuild before the write operation completes.
+     *
+     * @param wasmFile The path to the WASM file to monitor
+     * @param moduleName The name of the module (for logging)
+     * @throws IOException If file operations fail
+     */
+    private void waitForFileStability(Path wasmFile, String moduleName) throws IOException {
+        final long stabilityCheckIntervalMs = 200;
+        final long maxWaitMs = 3000;
+        final int requiredStableChecks = 3; // File must be stable for 3 consecutive checks
+
+        if (!Files.exists(wasmFile)) {
+            LOG.warn("WASM file does not exist yet: " + wasmFile + " for module " + moduleName);
+            return;
+        }
+
+        long lastSize = Files.size(wasmFile);
+        int stableChecks = 0;
+        final long startTime = System.currentTimeMillis();
+
+        LOG.debug("Checking file stability for " + wasmFile + " (module: " + moduleName + ")");
+
+        while (System.currentTimeMillis() - startTime < maxWaitMs) {
+            try {
+                Thread.sleep(stabilityCheckIntervalMs);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                throw new IOException("Interrupted while waiting for file stability", e);
+            }
+
+            long currentSize = Files.size(wasmFile);
+
+            if (currentSize == lastSize && currentSize > 0) {
+                stableChecks++;
+                if (stableChecks >= requiredStableChecks) {
+                    LOG.debug("File is stable: " + wasmFile + " (size: " + currentSize + " bytes)");
+                    return;
+                }
+            } else {
+                // File size changed, reset counter
+                stableChecks = 0;
+                lastSize = currentSize;
+                LOG.debug("File still changing: " + wasmFile + " (size: " + currentSize + " bytes)");
+            }
+        }
+
+        // File is stable or we've waited long enough
+        LOG.debug("File stability check completed for " + wasmFile + " after " +
+                (System.currentTimeMillis() - startTime) + "ms");
     }
 }
