@@ -186,7 +186,7 @@ class QuarkusWasmProcessor {
                     }
                 }
                 // 1 .meta Wasm file
-                LOG.debug("Tracking the generated .meta file in " + classesDir.toFile().getAbsolutePath());
+                LOG.debug("Tracking the generated .meta files in " + classesDir.toFile().getAbsolutePath());
                 try (Stream<Path> pathStream = Files.walk(classesDir.toAbsolutePath())) {
                     generatedMetaWasm = pathStream
                             .filter(p -> p.toString().endsWith(".meta"))
@@ -195,7 +195,7 @@ class QuarkusWasmProcessor {
                     LOG.debug("Tracking the generated .meta file: " + generatedMetaWasm);
                 }
                 // 1 .java source file
-                LOG.debug("Tracking the generated .java file in " + generatedSourcesDir.toFile().getAbsolutePath());
+                LOG.debug("Tracking the generated .java files in " + generatedSourcesDir.toFile().getAbsolutePath());
                 try (Stream<Path> pathStream = Files.walk(generatedSourcesDir.toAbsolutePath())) {
                     generatedJava = pathStream
                             .filter(p -> p.toString().endsWith(".java"))
@@ -240,7 +240,7 @@ class QuarkusWasmProcessor {
             final String classPackage = name.substring(0, name.lastIndexOf('.'));
             for (Path file : buildItem.getClasses()) {
                 final String className = classPackage + "." + file.getFileName().toString().replace(".class", "");
-                LOG.info("Adding .class file: " + className);
+                LOG.debug("Adding .class file: " + className);
                 // register as an application class
                 generatedClassBuildItemBuildProducer.produce(
                         new GeneratedClassBuildItem(true, className, Files.readAllBytes(file)));
@@ -331,7 +331,7 @@ class QuarkusWasmProcessor {
             final Path wasmFile;
             if (moduleConfig.wasmFile().isPresent()) {
                 wasmFile = moduleConfig.wasmFileAbsolutePath(outputTarget.getOutputDirectory().getParent());
-                LOG.info("Adding " + wasmFile + " to the collection of watched resources (dev mode)");
+                LOG.info("Adding " + wasmFile + " to the collection of watched resources (live reload)");
                 result.add(new HotDeploymentWatchedFileBuildItem(wasmFile.toAbsolutePath().toString()));
             }
         }

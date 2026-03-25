@@ -59,14 +59,14 @@ public class WasmQuarkusContext {
             } else {
                 // ... otherwise fallback to the runtime compiler (default), as the payload is loaded dynamically (and
                 // the user cannot set it)
-                LOG.info(
+                LOG.debug(
                         "No payload is configured for Wasm module " + moduleKey + ", execution mode is " + actualExecutionMode);
             }
         } else {
             // Wasm payload is configured statically, and execution mode as well both for native vs. JVM package
             // type
             actualExecutionMode = moduleConfig.compiler().executionMode();
-            LOG.info("Payload is configured for Wasm module " + moduleKey + ", execution mode is " + actualExecutionMode);
+            LOG.debug("Payload is configured for Wasm module " + moduleKey + ", execution mode is " + actualExecutionMode);
         }
         this.name = moduleConfig.name();
         this.executionMode = actualExecutionMode;

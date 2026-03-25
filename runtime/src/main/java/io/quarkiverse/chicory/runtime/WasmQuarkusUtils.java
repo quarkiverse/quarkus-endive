@@ -71,7 +71,7 @@ public class WasmQuarkusUtils {
         }
         final String resourcePath = getWasmModuleClassPath(wasmModuleName);
         final String resource = resourcePath + "/" + getWasmModuleClassName(wasmModuleName) + ".meta";
-        LOG.info("Getting Wasm module resource for " + resource);
+        LOG.debug("Getting Wasm module resource for " + resource);
         return Thread.currentThread().getContextClassLoader().getResourceAsStream(resource);
     }
 
