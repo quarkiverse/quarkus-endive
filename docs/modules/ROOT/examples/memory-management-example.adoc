@@ -6,8 +6,8 @@ WebAssembly.
 
 [source,properties]
 ----
-quarkus.chicory.modules.go-cel.name=io.quarkiverse.chicory.it.GoCelModule
-quarkus.chicory.modules.go-cel.wasm-file=${project.basedir}/src/main/resources/go-cel.wasm
+quarkus.endive.modules.go-cel.name=io.quarkiverse.endive.it.GoCelModule
+quarkus.endive.modules.go-cel.wasm-file=${project.basedir}/src/main/resources/go-cel.wasm
 ----
 
 ==== WASM Module Requirements

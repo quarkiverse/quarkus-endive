@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.chicory</groupId>
-        <artifactId>quarkus-chicory-integration-tests-parent</artifactId>
+        <groupId>io.quarkiverse.endive</groupId>
+        <artifactId>quarkus-endive-integration-tests-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
 
-    <artifactId>quarkus-chicory-integration-tests-hello-world-imports</artifactId>
-    <name>Quarkus Chicory - Integration Test - Hello World Imports</name>
+    <artifactId>quarkus-endive-integration-tests-hello-world-imports</artifactId>
+    <name>Quarkus Endive - Integration Test - Hello World Imports</name>
 
     <dependencies>
         <dependency>
@@ -17,8 +17,8 @@
             <artifactId>quarkus-rest</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.chicory</groupId>
-            <artifactId>quarkus-chicory</artifactId>
+            <groupId>io.quarkiverse.endive</groupId>
+            <artifactId>quarkus-endive</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

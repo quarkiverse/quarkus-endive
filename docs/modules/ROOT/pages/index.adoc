@@ -1,10 +1,10 @@
-= Quarkus Chicory - An extension to easily integrate https://github.com/dylibso/chicory[Chicory] in your Quarkus applications
+= Quarkus Endive - An extension to easily integrate https://github.com/bytecodealliance/endive[Endive] in your Quarkus applications
 
 include::./includes/attributes.adoc[]
 
 == Overview
 
-Quarkus Chicory integrates the https://github.com/dylibso/chicory[Chicory] WebAssembly runtime into Quarkus
+Quarkus Endive integrates the https://github.com/bytecodealliance/endive[Endive] WebAssembly runtime into Quarkus
 applications, providing a seamless way to execute WebAssembly modules within your Java applications. The extension
 abstracts away the complexity of WASM module management, compilation strategies, and execution modes through a simple
 injectable API.
@@ -61,7 +61,7 @@ public void init() {
 
 The extension generates Java bytecode from your WebAssembly modules at build time:
 
-- **Replaces Chicory Maven plugin** - no separate plugin needed
+- **Replaces Endive Maven plugin** - no separate plugin needed
 - **Type-safe access** to exported functions through generated classes
 - **Optimized performance** through build-time compilation
 - **Better IDE integration** with code completion and type checking
@@ -70,7 +70,7 @@ Generated code is automatically available in the build output.
 
 === Dependency Management
 
-Automatically handles version alignment between Quarkus and Chicory's ASM dependencies:
+Automatically handles version alignment between Quarkus and Endive's ASM dependencies:
 
 - **No dependency conflicts** - transparent version management
 - **Just add the extension** - no manual dependency configuration
@@ -82,8 +82,8 @@ Configure and manage multiple WebAssembly modules, each with its own `WasmQuarku
 
 [source,properties]
 ----
-quarkus.chicory.modules.module-a.wasm-file=module-a.wasm
-quarkus.chicory.modules.module-b.wasm-file=module-b.wasm
+quarkus.endive.modules.module-a.wasm-file=module-a.wasm
+quarkus.endive.modules.module-b.wasm-file=module-b.wasm
 ----
 
 [source,java]
@@ -102,8 +102,8 @@ Modules configured through `application.properties` with `WasmQuarkusContext` pr
 
 [source,properties]
 ----
-quarkus.chicory.modules.my-module.name=com.example.MyModule
-quarkus.chicory.modules.my-module.wasm-file=${project.basedir}/src/main/resources/my-module.wasm
+quarkus.endive.modules.my-module.name=com.example.MyModule
+quarkus.endive.modules.my-module.wasm-file=${project.basedir}/src/main/resources/my-module.wasm
 ----
 
 **Benefits:**
@@ -155,17 +155,17 @@ Static modules automatically watched and reloaded:
 Full GraalVM native image support with build-time WASM compilation through the extension's native-aware
 `MachineFactory`.
 
-== Note on Chicory Annotations
+== Note on Endive Annotations
 
-The **quarkus-chicory extension does not currently expose Chicory's annotation processing capabilities**
+The **quarkus-endive extension does not currently expose Endive's annotation processing capabilities**
 (`@HostModule`/`@WasmExport`) to users. The extension focuses on:
 
 - Injectable `WasmQuarkusContext` beans
 - Automatic code generation from WASM modules
 - Environment-optimized `MachineFactory` configuration
 
-If you want to use Chicory's `@HostModule`/`@WasmExport` annotations in a Quarkus application, you would need to
-manually add the Chicory annotation processor dependencies to your project.
+If you want to use Endive's `@HostModule`/`@WasmExport` annotations in a Quarkus application, you would need to
+manually add the Endive annotation processor dependencies to your project.
 
 == Examples
 
@@ -195,7 +195,7 @@ include::./{examples-dir}/memory-management-example.adoc[]
 
 == Installation
 
-If you want to use this extension, you need to add the `io.quarkiverse:quarkus-chicory` extension first to your build
+If you want to use this extension, you need to add the `io.quarkiverse:quarkus-endive` extension first to your build
 file.
 
 For instance, with Maven, add the following dependency to your POM file:
@@ -203,8 +203,8 @@ For instance, with Maven, add the following dependency to your POM file:
 [source,xml,subs=attributes+]
 ----
 <dependency>
-    <groupId>io.quarkiverse.chicory</groupId>
-    <artifactId>quarkus-chicory</artifactId>
+    <groupId>io.quarkiverse.endive</groupId>
+    <artifactId>quarkus-endive</artifactId>
     <version>{project-version}</version>
 </dependency>
 ----
@@ -212,4 +212,4 @@ For instance, with Maven, add the following dependency to your POM file:
 [[extension-configuration-reference]]
 == Extension Configuration Reference
 
-include::includes/quarkus-chicory.adoc[leveloffset=+1, opts=optional]
+include::includes/quarkus-endive.adoc[leveloffset=+1, opts=optional]

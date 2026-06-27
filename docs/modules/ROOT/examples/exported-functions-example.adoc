@@ -7,8 +7,8 @@ Configure your WASM module in `application.properties`:
 
 [source,properties]
 ----
-quarkus.chicory.modules.calculator.name=io.quarkiverse.chicory.it.CalculatorModule
-quarkus.chicory.modules.calculator.wasm-file=${project.basedir}/src/main/resources/calculator.wasm
+quarkus.endive.modules.calculator.name=io.quarkiverse.endive.it.CalculatorModule
+quarkus.endive.modules.calculator.wasm-file=${project.basedir}/src/main/resources/calculator.wasm
 ----
 
 ==== WASM Module Exports

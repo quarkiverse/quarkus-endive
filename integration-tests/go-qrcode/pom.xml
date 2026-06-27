@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.chicory</groupId>
-        <artifactId>quarkus-chicory-integration-tests-parent</artifactId>
+        <groupId>io.quarkiverse.endive</groupId>
+        <artifactId>quarkus-endive-integration-tests-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
 
-    <artifactId>quarkus-chicory-integration-tests-go-qrcode</artifactId>
-    <name>Quarkus Chicory - Integration Test - Go QRCode</name>
+    <artifactId>quarkus-endive-integration-tests-go-qrcode</artifactId>
+    <name>Quarkus Endive - Integration Test - Go QRCode</name>
 
     <dependencies>
         <dependency>
@@ -17,12 +17,12 @@
             <artifactId>quarkus-rest</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.chicory</groupId>
-            <artifactId>quarkus-chicory</artifactId>
+            <groupId>io.quarkiverse.endive</groupId>
+            <artifactId>quarkus-endive</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.dylibso.chicory</groupId>
+            <groupId>run.endive</groupId>
             <artifactId>wasi</artifactId>
         </dependency>
         <dependency>

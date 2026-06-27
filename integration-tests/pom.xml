@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.chicory</groupId>
-        <artifactId>quarkus-chicory-parent</artifactId>
+        <groupId>io.quarkiverse.endive</groupId>
+        <artifactId>quarkus-endive-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-chicory-integration-tests-parent</artifactId>
-    <name>Quarkus Chicory - Integration Tests Parent</name>
+    <artifactId>quarkus-endive-integration-tests-parent</artifactId>
+    <name>Quarkus Endive - Integration Tests Parent</name>
     <packaging>pom</packaging>
 
     <properties>

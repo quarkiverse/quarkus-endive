@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.chicory</groupId>
-        <artifactId>quarkus-chicory-parent</artifactId>
+        <groupId>io.quarkiverse.endive</groupId>
+        <artifactId>quarkus-endive-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-chicory-deployment</artifactId>
-    <name>Quarkus Chicory - Deployment</name>
+    <artifactId>quarkus-endive-deployment</artifactId>
+    <name>Quarkus Endive - Deployment</name>
 
     <dependencies>
         <dependency>
@@ -20,12 +20,12 @@
             <artifactId>quarkus-core-deployment</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.dylibso.chicory</groupId>
+            <groupId>run.endive</groupId>
             <artifactId>build-time-compiler</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.chicory</groupId>
-            <artifactId>quarkus-chicory</artifactId>
+            <groupId>io.quarkiverse.endive</groupId>
+            <artifactId>quarkus-endive</artifactId>
             <version>${project.version}</version>
         </dependency>
 

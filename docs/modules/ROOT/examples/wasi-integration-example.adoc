@@ -7,8 +7,8 @@ Configure the module in `application.properties`:
 
 [source,properties]
 ----
-quarkus.chicory.modules.qrcode.name=io.quarkiverse.chicory.it.QRCodeModule
-quarkus.chicory.modules.qrcode.wasm-file=${project.basedir}/src/main/resources/qr-generator.wasm
+quarkus.endive.modules.qrcode.name=io.quarkiverse.endive.it.QRCodeModule
+quarkus.endive.modules.qrcode.wasm-file=${project.basedir}/src/main/resources/qr-generator.wasm
 ----
 
 ==== Java Implementation
