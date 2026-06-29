@@ -1,0 +1,137 @@
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[.header-title]##Configuration property##
+h|Type
+h|Default
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-wasm-file]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-wasm-file[`+++quarkus.endive.modules."modules".wasm-file+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".wasm-file+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The Wasm module file to be used. If `wasm-resource()` is defined too, this has precedence over it.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__WASM_FILE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__WASM_FILE+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-wasm-resource]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-wasm-resource[`+++quarkus.endive.modules."modules".wasm-resource+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".wasm-resource+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The Wasm module to be used. If `wasm-file()` is defined too, it has precedence over this.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__WASM_RESOURCE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__WASM_RESOURCE+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-name]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-name[`+++quarkus.endive.modules."modules".name+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".name+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The base name to be used for the generated API class.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__NAME+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__NAME+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|required icon:exclamation-circle[title=Configuration property is required]
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-compiler-execution-mode]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-compiler-execution-mode[`+++quarkus.endive.modules."modules".compiler.execution-mode+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".compiler.execution-mode+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The execution mode for a configured Wasm module
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_EXECUTION_MODE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_EXECUTION_MODE+++`
+endif::add-copy-button-to-env-var[]
+--
+a|`runtime-compiler`, `interpreter`
+|`+++interpreter+++`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-compiler-interpreter-fallback]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-compiler-interpreter-fallback[`+++quarkus.endive.modules."modules".compiler.interpreter-fallback+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".compiler.interpreter-fallback+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The action to take if the compiler needs to use the interpreter because a function is too big
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_INTERPRETER_FALLBACK+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_INTERPRETER_FALLBACK+++`
+endif::add-copy-button-to-env-var[]
+--
+a|`silent`, `warn`, `fail`
+|`+++warn+++`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-endive_quarkus-endive-modules-modules-compiler-interpreted-functions]] [.property-path]##link:#quarkus-endive_quarkus-endive-modules-modules-compiler-interpreted-functions[`+++quarkus.endive.modules."modules".compiler.interpreted-functions+++`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.endive.modules."modules".compiler.interpreted-functions+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The indexes of functions that should be interpreted, separated by commas
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_INTERPRETED_FUNCTIONS+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_ENDIVE_MODULES__MODULES__COMPILER_INTERPRETED_FUNCTIONS+++`
+endif::add-copy-button-to-env-var[]
+--
+|list of int
+|
+
+|===
+

@@ -7,8 +7,8 @@ Configure your WASM module in `application.properties`:
 
 [source,properties]
 ----
-quarkus.chicory.modules.operation.name=io.quarkiverse.chicory.it.OperationModule
-quarkus.chicory.modules.operation.wasm-resource=operation.wasm
+quarkus.endive.modules.operation.name=io.quarkiverse.endive.it.OperationModule
+quarkus.endive.modules.operation.wasm-resource=operation.wasm
 ----
 
 ==== Java Implementation
@@ -17,9 +17,9 @@ Inject the module and provide host functions that the WASM module can import:
 
 [source,java]
 ----
-@Path("/chicory")
+@Path("/endive")
 @ApplicationScoped
-public class ChicoryResourceWithImports {
+public class EndiveResourceWithImports {
 
     @Inject
     @Named("operation")

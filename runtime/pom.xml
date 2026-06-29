@@ -3,31 +3,31 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.chicory</groupId>
-        <artifactId>quarkus-chicory-parent</artifactId>
+        <groupId>io.quarkiverse.endive</groupId>
+        <artifactId>quarkus-endive-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-chicory</artifactId>
-    <name>Quarkus Chicory - Runtime</name>
+    <artifactId>quarkus-endive</artifactId>
+    <name>Quarkus Endive - Runtime</name>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.quarkiverse.chicory</groupId>
-                <artifactId>quarkus-chicory</artifactId>
+                <groupId>io.quarkiverse.endive</groupId>
+                <artifactId>quarkus-endive</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--
-            quarkus-chicory-bom excludes chicory ASM dependencies
+            quarkus-endive-bom excludes endive ASM dependencies
             in order to remove the need for the application developer to define them
             and override the version to align with those defined by Quarkus itself.
-            Having the Quarkus-aligned ASM dependencies in is required when using chicory
+            Having the Quarkus-aligned ASM dependencies in is required when using endive
             runtime compilation.
             -->
             <dependency>
-                <groupId>com.dylibso.chicory</groupId>
+                <groupId>run.endive</groupId>
                 <artifactId>bom</artifactId>
-                <version>${dylibso.version}</version>
+                <version>${endive.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
                 <exclusions>
@@ -66,11 +66,11 @@
             <artifactId>quarkus-arc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.dylibso.chicory</groupId>
+            <groupId>run.endive</groupId>
             <artifactId>compiler</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.dylibso.chicory</groupId>
+            <groupId>run.endive</groupId>
             <artifactId>runtime</artifactId>
         </dependency>
     </dependencies>

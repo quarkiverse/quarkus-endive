@@ -1,12 +1,12 @@
-name: Chicory
+name: Endive
 description: | 
-  A Quarkus extension for Chicory, that takes care of the plumbing behind the scenes so developers can just 
+  A Quarkus extension for Endive, that takes care of the plumbing behind the scenes so developers can just 
   focus on their applications.
 metadata:
   keywords:
-    - chicory
+    - endive
     - wasm
-  guide: https://docs.quarkiverse.io/quarkus-chicory/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
+  guide: https://docs.quarkiverse.io/quarkus-endive/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
   categories:
     - "miscellaneous"
   status: "preview"

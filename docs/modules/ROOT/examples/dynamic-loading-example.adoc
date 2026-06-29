@@ -9,7 +9,7 @@ Configure a dynamic module without specifying the WASM payload in `application.p
 [source,properties]
 ----
 # Define the module but don't specify wasm-file or wasm-resource
-quarkus.chicory.modules.operation-dynamic.name=io.quarkiverse.chicory.it.DynamicOperationModule
+quarkus.endive.modules.operation-dynamic.name=io.quarkiverse.endive.it.DynamicOperationModule
 
 # The Wasm module payload will be provided at runtime
 ----
@@ -21,9 +21,9 @@ creates the `WasmQuarkusContext` bean, but the actual WASM module is loaded late
 
 [source,java]
 ----
-@Path("/chicory/dynamic")
+@Path("/endive/dynamic")
 @ApplicationScoped
-public class ChicoryDynamicResource {
+public class EndiveDynamicResource {
 
     @Inject
     @Named("operation-dynamic")

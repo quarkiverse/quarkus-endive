@@ -1,10 +1,10 @@
-# Quarkus Chicory
+# Quarkus Endive
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.chicory/quarkus-chicory?logo=apache-maven&style=flat-square)](https://central.sonatype.com/artifact/io.quarkiverse.chicory/quarkus-chicory-parent)
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.endive/quarkus-endive?logo=apache-maven&style=flat-square)](https://central.sonatype.com/artifact/io.quarkiverse.endive/quarkus-endive-parent)
 
 ## Overview
 
-Quarkus Chicory integrates the [Chicory](https://github.com/dylibso/chicory) WebAssembly runtime with Quarkus, enabling 
+Quarkus Endive integrates the [Endive](https://github.com/bytecodealliance/endive) WebAssembly runtime with Quarkus, enabling 
 seamless execution of WebAssembly modules within Java applications.
 
 The extension provides environment-aware WebAssembly module management through CDI injection, with automatic 
@@ -20,7 +20,7 @@ on execution context
 - **Multi-Module Support** - Configure and manage multiple independent WASM modules
 - **Build-Time Code Generation** - Build-time compilation of WASM to JVM bytecode for optimal performance
 - **Live Reload** - Automatic module recompilation in development mode when WASM files change
-- **WASI Support** - Integrates Chicory WebAssembly System Interface implementation
+- **WASI Support** - Integrates Endive WebAssembly System Interface implementation
 - **Native Image Compatible** - First-class support for GraalVM native images
 
 ## Quick Start
@@ -29,16 +29,16 @@ Add the extension to your project:
 
 ```xml
 <dependency>
-    <groupId>io.quarkiverse.chicory</groupId>
-    <artifactId>quarkus-chicory</artifactId>
-    <version>${quarkus-chicory.version}</version>
+    <groupId>io.quarkiverse.endive</groupId>
+    <artifactId>quarkus-endive</artifactId>
+    <version>${quarkus-endive.version}</version>
 </dependency>
 ```
 
 Configure a WASM module in `application.properties`:
 
 ```properties
-quarkus.chicory.modules.my-module.wasm-file=src/main/resources/my-module.wasm
+quarkus.endive.modules.my-module.wasm-file=src/main/resources/my-module.wasm
 ```
 
 Inject and use in your application:

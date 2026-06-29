@@ -7,11 +7,11 @@
         <artifactId>quarkiverse-parent</artifactId>
         <version>21</version>
     </parent>
-    <groupId>io.quarkiverse.chicory</groupId>
-    <artifactId>quarkus-chicory-parent</artifactId>
+    <groupId>io.quarkiverse.endive</groupId>
+    <artifactId>quarkus-endive-parent</artifactId>
     <version>999-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Quarkus Chicory - Parent</name>
+    <name>Quarkus Endive - Parent</name>
 
     <modules>
         <module>deployment</module>
@@ -19,9 +19,9 @@
     </modules>
 
     <scm>
-        <connection>scm:git:git@github.com:quarkiverse/quarkus-chicory.git</connection>
-        <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-chicory.git</developerConnection>
-        <url>https://github.com/quarkiverse/quarkus-chicory</url>
+        <connection>scm:git:git@github.com:quarkiverse/quarkus-endive.git</connection>
+        <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-endive.git</developerConnection>
+        <url>https://github.com/quarkiverse/quarkus-endive</url>
       <tag>HEAD</tag>
   </scm>
 
@@ -31,7 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>3.36.1</quarkus.version>
-        <dylibso.version>1.7.5</dylibso.version>
+        <endive.version>1.0.0</endive.version>
     </properties>
 
     <dependencyManagement>
@@ -44,24 +44,24 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>com.dylibso.chicory</groupId>
+                <groupId>run.endive</groupId>
                 <artifactId>build-time-compiler</artifactId>
-                <version>${dylibso.version}</version>
+                <version>${endive.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.dylibso.chicory</groupId>
+                <groupId>run.endive</groupId>
                 <artifactId>compiler</artifactId>
-                <version>${dylibso.version}</version>
+                <version>${endive.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.dylibso.chicory</groupId>
+                <groupId>run.endive</groupId>
                 <artifactId>runtime</artifactId>
-                <version>${dylibso.version}</version>
+                <version>${endive.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.dylibso.chicory</groupId>
+                <groupId>run.endive</groupId>
                 <artifactId>wasi</artifactId>
-                <version>${dylibso.version}</version>
+                <version>${endive.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

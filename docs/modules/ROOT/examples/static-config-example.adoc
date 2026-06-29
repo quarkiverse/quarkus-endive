@@ -5,13 +5,13 @@ This example demonstrates how to configure and use a static WebAssembly module l
 
 [source,properties]
 ----
-quarkus.chicory.modules.operation-static.name=io.quarkiverse.chicory.it.OperationModule
+quarkus.endive.modules.operation-static.name=io.quarkiverse.endive.it.OperationModule
 # The Wasm module payload is configurable either as a file
-##quarkus.chicory.modules.operation.wasm-file=src/main/resources/wasm/operation.wasm
+##quarkus.endive.modules.operation.wasm-file=src/main/resources/wasm/operation.wasm
 # Or as a classpath resource, but file the file based configuration takes precedence
-quarkus.chicory.modules.operation-static.wasm-resource=operation.wasm
+quarkus.endive.modules.operation-static.wasm-resource=operation.wasm
 
-# Quarkus Chicory will watch all configured Wasm modules, so no need to add the following property:
+# Quarkus Endive will watch all configured Wasm modules, so no need to add the following property:
 #quarkus.live-reload.watched-resources=wasm/operation.wasm
 ----
 
@@ -24,9 +24,9 @@ The above configuration will let your application inject a `WasmQuarkusContext` 
 
 [source,java]
 ----
-@Path("/chicory")
+@Path("/endive")
 @ApplicationScoped
-public class ChicoryResource {
+public class EndiveResource {
 
     @Inject
     @Named("operation-static")
@@ -44,7 +44,7 @@ public class ChicoryResource {
     @GET
     public Response hello() {
         var result = instance.export("operation").apply(41, 1);
-        return Response.ok("Hello chicory: " + result[0]).build();
+        return Response.ok("Hello endive: " + result[0]).build();
     }
 }
 ----
